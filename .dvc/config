@@ -1,4 +1,4 @@
 [core]
-    remote = gdrive_remote
-['remote "gdrive_remote"']
-    url = gdrive://15g5nOnxxAktNHnnQCyHLm6tgsr6uA4uV
+    remote = s3-remote
+['remote "s3-remote"']
+    url = s3://mlops-project-t6/mlops-data
