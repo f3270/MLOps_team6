@@ -94,6 +94,7 @@ outputs
 
 # Data
 data/*/*
+!data/*/*.dvc
 
 # Notebooks
 notebooks/*
