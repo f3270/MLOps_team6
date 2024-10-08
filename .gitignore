@@ -95,5 +95,5 @@ outputs
 # Data
 data/*/*
 
-# Notebooks
 notebooks/*
+!notebooks/*.ipynb
