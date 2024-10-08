@@ -94,6 +94,7 @@ outputs
 
 # Data
 data/*/*
+!data/*/*.dvc
 
 notebooks/*
 !notebooks/*.ipynb
