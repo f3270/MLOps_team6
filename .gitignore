@@ -96,12 +96,11 @@ outputs
 data/*/*
 !data/*/*.dvc
 
-<<<<<<< Updated upstream
+# Notebooks
 notebooks/*
 !notebooks/*.ipynb
-=======
-# Notebooks
 notebooks/*Pipfile.lock
+
+# Pipenv 
 Pipfile
 Pipfile.lock
->>>>>>> Stashed changes
