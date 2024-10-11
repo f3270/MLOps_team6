@@ -96,5 +96,11 @@ outputs
 data/*/*
 !data/*/*.dvc
 
+# Notebooks
 notebooks/*
 !notebooks/*.ipynb
+notebooks/*Pipfile.lock
+
+# Pipenv 
+Pipfile
+Pipfile.lock
