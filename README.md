@@ -148,7 +148,7 @@ make docs
 
 # Entrega 1 Proyecto
 
-![Mapa Mental Desarrollo de Fases en el Proyecto de Machine Learning2.svg](Mapa_Mental_Desarrollo_de_Fases_en_el_Proyecto_de_Machine_Learning2.svg)
+![Mapa Mental Desarrollo de Fases en el Proyecto de Machine Learning2.svg](https://raw.githubusercontent.com/greyngs/MLOps_team6/febecceff78ec883e3e39083a4944fb20cb3a5e7/Recursos%20Adicionales/Mapa%20Mental%20Desarrollo%20de%20Fases%20en%20el%20Proyecto%20de%20Machine%20Learning.svg)
 
 # 1. **Manipulación y Preparación de Datos**
 
