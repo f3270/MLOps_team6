@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/0/0814e5dffbd84be18f75c98d087cba95/artifacts
+deleted_time: 1729098203851
+end_time: 1729095614017
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: deleted
+run_id: 0814e5dffbd84be18f75c98d087cba95
+run_name: honorable-doe-344
+run_uuid: 0814e5dffbd84be18f75c98d087cba95
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1729095595722
+status: 3
+tags: []
+user_id: Cetecom

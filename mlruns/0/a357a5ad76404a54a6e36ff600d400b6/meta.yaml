@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/0/a357a5ad76404a54a6e36ff600d400b6/artifacts
+deleted_time: 1729026277937
+end_time: 1729024205308
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: deleted
+run_id: a357a5ad76404a54a6e36ff600d400b6
+run_name: debonair-rook-198
+run_uuid: a357a5ad76404a54a6e36ff600d400b6
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1729024205271
+status: 4
+tags: []
+user_id: Cetecom

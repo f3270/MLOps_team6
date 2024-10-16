@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/0/8d2f2f57ec054c32a6161324cd6007a5/artifacts
+deleted_time: 1729026277943
+end_time: 1729024061089
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: deleted
+run_id: 8d2f2f57ec054c32a6161324cd6007a5
+run_name: casual-koi-7
+run_uuid: 8d2f2f57ec054c32a6161324cd6007a5
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1729024061042
+status: 4
+tags: []
+user_id: Cetecom
