@@ -1,0 +1,12 @@
+artifact_path: random_forest_model
+flavors:
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.5.2
+mlflow_version: 2.16.2
+model_size_bytes: 45
+model_uuid: 4c5a3714ed5143dc8d9593d1d65afbf6
+run_id: 4610476444cf490e890a97f294ffbad8
+utc_time_created: '2024-10-16 17:05:49.876460'

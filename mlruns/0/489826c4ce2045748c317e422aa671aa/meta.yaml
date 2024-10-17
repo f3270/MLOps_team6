@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/0/489826c4ce2045748c317e422aa671aa/artifacts
+deleted_time: 1729100287191
+end_time: 1729100185286
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: deleted
+run_id: 489826c4ce2045748c317e422aa671aa
+run_name: Oscar's Bone Marrow Experiment
+run_uuid: 489826c4ce2045748c317e422aa671aa
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1729100176673
+status: 3
+tags: []
+user_id: Cetecom

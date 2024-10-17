@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1729100713771
+current_stage: None
+description: ''
+last_updated_timestamp: 1729100713771
+name: Bone_Marrow_Model
+run_id: cfe23f9947e54ad8a6b02d81788ef97b
+run_link: ''
+source: mlflow-artifacts:/0/cfe23f9947e54ad8a6b02d81788ef97b/artifacts/models/random_forest_model.pkl
+status: READY
+status_message: null
+storage_location: mlflow-artifacts:/0/cfe23f9947e54ad8a6b02d81788ef97b/artifacts/models/random_forest_model.pkl
+user_id: null
+version: 1
