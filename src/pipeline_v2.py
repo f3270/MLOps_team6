@@ -60,6 +60,10 @@ def run_pipeline(data_path, model_output_path):
 
         run_train_model(X_train_path, y_train_path, model_output_path)
 
+        # Registrar el modelo en el Model Registry y activar el versionado
+        model_uri = f"runs:/{mlflow.active_run().info.run_id}/{model_output_path}"
+        mlflow.register_model(model_uri, "Bone_Marrow_Model")
+
         print("Evaluando el modelo...")
         predictions, y_test = run_evaluate_model(model_output_path, X_test_path, y_test_path)
         accuracy = accuracy_score(y_test, predictions)

@@ -52,13 +52,18 @@ def run_pipeline(data_path, model_output_path):
         print("Entrenando el modelo...")
 
         # Registrar parámetros del modelo en MLflow
-        mlflow.log_param("n_estimators", 100)
-        mlflow.log_param("max_depth", 10)
-        mlflow.log_param("min_samples_split", 2)
-        mlflow.log_param("min_samples_leaf", 1)
-        mlflow.log_param("random_state", 42)
+        mlflow.log_param("n_estimators", 500)    # Incremento significativo en el número de árboles
+        mlflow.log_param("max_depth", 20)        # Permite árboles más profundos para capturar relaciones complejas
+        mlflow.log_param("min_samples_split", 5) # Requiere más muestras para dividir un nodo
+        mlflow.log_param("min_samples_leaf", 2)  # Cada nodo hoja tendrá al menos 2 muestras
+        mlflow.log_param("random_state", 42)     # Mantén esto constante para reproducibilidad
+
 
         run_train_model(X_train_path, y_train_path, model_output_path)
+
+        # Registrar el modelo en el Model Registry y activar el versionado
+        model_uri = f"runs:/{mlflow.active_run().info.run_id}/{model_output_path}"
+        mlflow.register_model(model_uri, "Bone_Marrow_Model")
 
         print("Evaluando el modelo...")
         predictions, y_test = run_evaluate_model(model_output_path, X_test_path, y_test_path)
