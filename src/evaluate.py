@@ -2,26 +2,19 @@ import pandas as pd
 import sys
 import joblib
 from sklearn.metrics import confusion_matrix, classification_report, accuracy_score, precision_score, recall_score, f1_score
-import seaborn as sns
-import matplotlib.pyplot as plt
+from sklearn.model_selection import cross_val_predict
 
 
 def evaluate_model_params(model, X_test, y_test):
-    y_pred = model.predict(X_test)
+    # Realizar validación cruzada y predicción
+    y_pred = cross_val_predict(model, X_test, y_test, cv=5)
 
-    # Calculate evaluation metrics
+    # Calcular métricas
     accuracy = accuracy_score(y_test, y_pred)
     precision = precision_score(y_test, y_pred, average='weighted')
     recall = recall_score(y_test, y_pred, average='weighted')
     f1 = f1_score(y_test, y_pred, average='weighted')
 
-    # Print the confusion matrix
-    cm = confusion_matrix(y_test, y_pred)
-    print("Confusion Matrix:")
-    sns.heatmap(cm, annot=True, fmt='d', cmap='Blues')
-    plt.show()
-
-    # Return the scores
     return accuracy, precision, recall, f1
 
 def evaluate_model(model_path, X_test_path, y_test_path):

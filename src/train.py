@@ -6,10 +6,10 @@ from sklearn.ensemble import RandomForestClassifier
 
 def train_model_params(X_train, y_train, params):
     model = RandomForestClassifier(
-        n_estimators=params.get('n_estimators', 100),
+        n_estimators=params.get('n_estimators'),
         max_depth=params.get('max_depth'),
-        min_samples_split=params.get('min_samples_split', 2),
-        min_samples_leaf=params.get('min_samples_leaf', 1),
+        min_samples_split=params.get('min_samples_split'),
+        min_samples_leaf=params.get('min_samples_leaf'),
         random_state=params.get('random_state')
     )
     model.fit(X_train, y_train)
