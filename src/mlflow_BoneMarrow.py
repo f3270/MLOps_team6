@@ -29,10 +29,9 @@ if __name__ == '__main__':
         mlflow.log_param("random_state", params.get('random_state'))
 
         model = train_model_params(X_train, y_train, params)
-        # model_info = mlflow.sklearn.log_model(
-        #     sk_model=model, artifact_path="model", registered_model_name="BoneMarrow_RF_1"
-        # )
-        # mlflow.register_model(model, "BoneMarrow_RF_1")
+        model_info = mlflow.sklearn.log_model(
+            sk_model=model, artifact_path="model", registered_model_name="BoneMarrow_RF_1"
+        )
 
         accuracy, precision, recall, f1 = evaluate_model_params(model, X_test, y_test)
         mlflow.log_metric("Accuracy", accuracy)

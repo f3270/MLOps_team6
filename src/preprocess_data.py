@@ -23,7 +23,6 @@ def preprocess_data(data_path):
     imputer_num = SimpleImputer(strategy='median')
     data[categorical_features] = imputer_cat.fit_transform(data[categorical_features])
     data[numerical_features] = imputer_num.fit_transform(data[numerical_features])
-
     error_rules = {
         'Recipientgender': lambda x: x in [0, 1],  # 0: Femenino, 1: Masculino
         'Stemcellsource': lambda x: x in [0, 1],  # 0: Sangre periférica, 1: Médula ósea
@@ -68,7 +67,7 @@ def preprocess_data(data_path):
         errors = data[~data[col].apply(rule)]
         num_errors = len(errors)
         if num_errors > 0:
-            print(f'Variable: {col}, Wrong values detected: {num_errors}')
+            # print(f'Variable: {col}, Wrong values detected: {num_errors}')
             if col != 'time_to_aGvHD_III_IV':
                 wrong_variables.update(errors.index.tolist())
     data.drop('time_to_aGvHD_III_IV', axis=1, inplace=True)
@@ -100,6 +99,8 @@ def preprocess_data(data_path):
         data[col] = data[col].apply(
             lambda x: x if lower_bound <= x <= upper_bound else np.nan
         )
+
+        data[outliers_columns] = imputer_num.fit_transform(data[outliers_columns])
     # --------------------------------------------------
 
     X = data.drop('survival_status', axis=1)
