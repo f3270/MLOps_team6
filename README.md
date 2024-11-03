@@ -222,9 +222,13 @@ El dataset utilizado en este proyecto contiene información clínica sensible de
 
 ### Versionado de Datos con DVC
 Con DVC, cada versión de datos queda registrada y vinculada a una versión específica del código, lo que asegura que los experimentos se puedan reproducir en cualquier momento con los mismos datos y configuración.
-
+ 
 
 # Sección 2: Entregas del Proyecto
+
+## Diagrama de bloques
+
+
 
 ## Entrega 1 Proyecto
 
