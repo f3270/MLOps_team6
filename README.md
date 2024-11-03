@@ -1,6 +1,7 @@
 
 ![Tecnológico de Monterrey Logo](https://javier.rodriguez.org.mx/itesm/2014/tecnologico-de-monterrey-blue.png)
 
+# MLOps-team6
 # Maestría en Inteligencia Artificial Aplicada
 
 **Asignatura:** Operaciones de aprendizaje automático  
@@ -22,7 +23,22 @@
 
 ## Sección 1: README
 
-# MLOps-team6
+# Proyecto de Machine Learning para Predicción de Supervivencia en Pacientes de Trasplante de Médula Ósea
+
+## Introducción
+
+Este proyecto tiene como objetivo desarrollar un modelo de machine learning que permita predecir la supervivencia de pacientes pediátricos tras un trasplante de médula ósea. Basado en un conjunto de datos clínicos, el modelo ofrece una herramienta predictiva que puede apoyar a los profesionales médicos en la toma de decisiones, ayudando a personalizar los tratamientos post-trasplante y mejorar así las tasas de supervivencia de los pacientes.
+
+### Contexto del Proyecto
+El proyecto utiliza datos de pacientes pediátricos con diversas enfermedades hematológicas, recolectados en un entorno clínico. Estos datos incluyen variables demográficas, datos del donante y el receptor, y detalles sobre el trasplante, entre otros. La correcta administración de estos datos es fundamental para cumplir con las normativas de privacidad y protección de datos, como la GDPR.
+
+### Objetivo
+Desarrollar un modelo predictivo que, a través del análisis de datos históricos y clínicos, permita estimar la probabilidad de supervivencia de pacientes post-trasplante de médula ósea. Este modelo busca ser una herramienta complementaria para el personal médico, permitiéndoles basar sus decisiones en datos más precisos y personalizados.
+
+---
+
+
+
 
 ## Herramientas utilizadas en este proyecto
 * [Hydra](https://hydra.cc/): Gestión avanzada de archivos de configuración, permitiendo modificar parámetros de manera dinámica. Consulta este [artículo](https://mathdatasimplified.com/stop-hard-coding-in-a-data-science-project-use-configuration-files-instead/) para más detalles.
@@ -30,6 +46,35 @@
 * [Pre-commit plugins](https://pre-commit.com/): Automatización de revisiones de código y formateo con plugins como `black`, `isort` y `flake8`.
 
 ## Proceso de Construcción del Modelo de Machine Learning
+
+## Estructura del Repositorio
+
+El repositorio está organizado de manera que cada componente del proyecto esté separado y claramente identificado. A continuación se describe la estructura de carpetas y archivos principales para facilitar la navegación y comprensión del proyecto.
+
+### Descripción General de Carpetas y Archivos
+
+- **data/**: Contiene los datos en crudo y procesados. Incluye subcarpetas para versionar datos con DVC.
+- **src/**: Código fuente del proyecto, que incluye los scripts de preprocesamiento, entrenamiento y evaluación del modelo.
+- **notebooks/**: Contiene los Jupyter Notebooks usados para análisis exploratorio de datos (EDA) y prototipado de modelos.
+- **config/**: Archivos de configuración (`config.yaml`) para hiperparámetros y rutas de archivos, centralizando los ajustes del pipeline.
+- **tests/**: Pruebas unitarias e integrales para verificar la funcionalidad de cada componente.
+- **Dockerfile**: Archivo de configuración de Docker para crear un contenedor reproducible del proyecto.
+- **requirements.txt**: Lista de dependencias necesarias para ejecutar el proyecto.
+- **README.md**: Documentación principal que explica el propósito, configuración y uso del proyecto.
+- **Makefile**: Define tareas automatizadas para facilitar la ejecución de distintos pasos del proyecto.
+
+### Árbol de Directorios
+
+```plaintext
+├── data/               # Almacenamiento de datos
+├── src/                # Código fuente del proyecto
+├── notebooks/          # Jupyter notebooks de análisis y prototipado
+├── config/             # Archivos de configuración
+├── tests/              # Pruebas unitarias e integrales
+├── Dockerfile          # Configuración de Docker
+├── requirements.txt    # Dependencias del proyecto
+├── README.md           # Documentación principal del proyecto
+└── Makefile            # Automatización de tareas
 
 
 ## Project Structure
@@ -143,10 +188,45 @@ To auto-generate API document for your project, run:
 make docs
 ```
 
+## Configuración del Entorno
 
-## Sección 2: Entrega del Proyecto
+Para asegurar la correcta ejecución del proyecto y facilitar la reproducibilidad en distintos entornos, a continuación se detallan los pasos para configurar el entorno de trabajo, instalar las dependencias necesarias y preparar el proyecto para su uso.
 
-# Entrega 1 Proyecto
+### Requerimientos de Software
+
+Para ejecutar este proyecto, asegúrate de tener instaladas las siguientes herramientas:
+- **Python** (versión 3.8 o superior)
+- **Git** (para el control de versiones)
+- **Docker** (opcional, para ejecutar el entorno en un contenedor reproducible)
+- **DVC** (Data Version Control, para el control de versiones de datos)
+- **MLflow** (para el registro y gestión de experimentos)
+
+### Instalación de Dependencias
+
+Existen múltiples formas de instalar las dependencias del proyecto. A continuación, se explican los métodos recomendados:
+
+#### 1. Instalación con `requirements.txt`
+
+El archivo `requirements.txt` contiene todas las bibliotecas necesarias para ejecutar el proyecto. Puedes instalar estas dependencias ejecutando el siguiente comando:
+
+```bash
+pip install -r requirements.txt
+```
+
+## Configuración de Datos
+
+Para garantizar la consistencia en los datos y asegurar la reproducibilidad de los resultados, hemos implementado un sistema de control de versiones de datos mediante DVC (Data Version Control). Utilizamos Amazon S3 como almacenamiento externo para los datos, lo que permite acceder a versiones específicas sin sobrecargar el repositorio de código.
+
+### Obtención de Datos
+El dataset utilizado en este proyecto contiene información clínica sensible de pacientes pediátricos que han recibido un trasplante de médula ósea. Para acceder a los datos, es necesario configurar las credenciales de Amazon S3 en tu sistema, ya que DVC los descarga directamente desde esta ubicación.
+
+### Versionado de Datos con DVC
+Con DVC, cada versión de datos queda registrada y vinculada a una versión específica del código, lo que asegura que los experimentos se puedan reproducir en cualquier momento con los mismos datos y configuración.
+
+
+# Sección 2: Entregas del Proyecto
+
+## Entrega 1 Proyecto
 
 ![Mapa Mental Desarrollo de Fases en el Proyecto de Machine Learning2.svg](/additional_resources/mind_map_ml_phases.svg)
 
