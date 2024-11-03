@@ -228,6 +228,22 @@ Con DVC, cada versión de datos queda registrada y vinculada a una versión espe
 
 ## Diagrama de bloques
 
+![Diagrama de Bloques](https://github.com/greyngs/MLOps_team6/raw/master/additional_resources/Diagrama_Bloques.svg)
+
+
+| **Bloque**                | **Descripción**                                                                                                                                         | **Propósito**                                                                                                                |
+|---------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|
+| **Entrada de Datos**      | Almacenamiento en crudo de los datos clínicos sensibles de pacientes en Amazon S3.                                                                     | Garantiza el acceso seguro y centralizado de los datos iniciales del proyecto, cumpliendo con normativas de privacidad.      |
+| **Control de Versiones**  | Versionado de código con Git y de datos con DVC, sincronizados en Amazon S3.                                                                           | Asegura que cada versión de código esté alineada con su versión de datos, permitiendo la reproducibilidad de los experimentos.|
+| **Configuración y Parámetros** | Definición de hiperparámetros iniciales, rutas de datos y configuraciones clave para el pipeline.                                     | Centraliza los parámetros del proyecto, facilitando ajustes rápidos y consistencia en los experimentos.                     |
+| **Preprocesamiento de Datos** | Limpieza, normalización, estandarización y balanceo de clases para preparar los datos de entrada.                                      | Asegura la calidad y consistencia de los datos antes de entrenar el modelo.                                                 |
+| **División de Datos**     | Separación de los datos preprocesados en conjuntos de entrenamiento y validación.                                                                     | Facilita la comparación de modelos al asegurar que cada experimento use los mismos datos de entrenamiento y validación.      |
+| **Entrenamiento del Modelo** | Selección y ajuste de hiperparámetros; entrenamiento del modelo usando el conjunto de datos de entrenamiento.                         | Optimiza el modelo para mejorar su rendimiento y precisión en el conjunto de entrenamiento.                                 |
+| **Evaluación del Modelo** | Cálculo de métricas (AUC, precisión, sensibilidad) y generación de gráficos de evaluación (ROC, matriz de confusión) en datos de validación.         | Mide el rendimiento del modelo en datos no vistos y valida su efectividad antes de avanzar a la siguiente etapa.            |
+| **Registro de Experimentos** | Uso de MLflow para registrar parámetros, métricas y artefactos, almacenándolos en Amazon S3 para trazabilidad.                          | Facilita la comparación y reproducibilidad de experimentos al almacenar versiones detalladas de cada experimento.           |
+| **Pruebas y Validación**  | Pruebas unitarias en cada componente del pipeline, pruebas integrales del flujo completo y revisión de cobertura de código.                        | Asegura la calidad del código y del pipeline, previniendo errores y validando la funcionalidad de cada componente.           |
+| **Integración Continua (CI)** | GitHub Actions ejecuta pruebas automáticas en cada cambio en el repositorio.                                                        | Automatiza la validación de cambios en el código, asegurando la calidad antes de integrar en la rama principal.              |
+| **Salida y Análisis**     | Selección del modelo óptimo, generación de informes de rendimiento y preparación para el uso clínico.                                                 | Finaliza el flujo con un modelo listo para implementación clínica y con documentación completa de su rendimiento.           |
 
 
 ## Entrega 1 Proyecto
